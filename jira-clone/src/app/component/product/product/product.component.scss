@@ -13,4 +13,17 @@
         text-align: center;
         margin-top: 0.5rem;
     }
+    select {
+        width: 6rem;
+        padding: 6px;
+        border-radius: 5px;
+        margin: auto;
+        display: block;
+        margin-bottom: 5px;
+    }
+    input {
+        margin-left: 5px;
+        margin: auto;
+        display: block;
+    }
 }

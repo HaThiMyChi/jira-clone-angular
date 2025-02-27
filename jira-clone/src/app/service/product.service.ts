@@ -8,12 +8,16 @@ import { Product } from '../model/product';
 
 export class ProductService {
     storage = window.localStorage;
-    apiUrl = 'http://localhost:4200/assets/data.json';
+    apiUrl = 'http://localhost:4220/assets/data.json';
 
     constructor(private http: HttpClient) {}
 
     getProduct(): Observable<Product[]> {
         console.log('get product')
         return this.http.get<Product[]>(this.apiUrl);
+    }
+
+    addProduct(product: Product[]):void {
+        this.storage.setItem('products', JSON.stringify(product));
     }
 }
