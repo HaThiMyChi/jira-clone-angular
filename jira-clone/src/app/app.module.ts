@@ -10,7 +10,9 @@ import { ProductComponent } from './component/product/product/product.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './service/product.service';
 import { ProductDetailComponent } from './component/product-detail/product-detail/product-detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserInfoComponent } from './component/cart/user-info/user-info/user-info.component';
+import { CheckoutFormComponent } from './component/checkout-form/checkout-form/checkout-form.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import { FormsModule } from '@angular/forms';
     CartComponent,
     ProductListComponent,
     ProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    UserInfoComponent,
+    CheckoutFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
