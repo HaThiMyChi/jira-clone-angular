@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class UserInfoComponent implements OnInit {
   createForm!: FormGroup;
+  submitted = false;
   @Output() userInfo = new EventEmitter();
   constructor(private fb: FormBuilder) { }
 
@@ -19,6 +20,7 @@ export class UserInfoComponent implements OnInit {
     })
   }
 
+  // sử dụng phương thức getter (get firstName, get address, get creditCard) để truy cập các form control trong FormGroup
   get firstName() {
     return this.createForm.get('firstName');
   }
@@ -32,7 +34,10 @@ export class UserInfoComponent implements OnInit {
   }
 
   obSubmit() {
-    this.userInfo.emit(this.createForm.value);
+    // this.createForm.value chứa tất cả dữ liệu của form, bao gồm các trường như firstName, address, và creditCard.
+    // Khi gọi .emit(), bạn sẽ truyền dữ liệu này cho component cha, nơi component cha có thể xử lý các dữ liệu đó.
+    this.userInfo.emit(this.createForm.value); // phat ra gia tri cua form khi nguoi dung nhan submit
   }
 
+  // thuộc tính dirty được sử dụng để kiểm tra xem người dùng đã thay đổi giá trị của một form control hay chưa
 }
